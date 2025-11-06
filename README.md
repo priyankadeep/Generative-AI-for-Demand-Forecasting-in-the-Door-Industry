@@ -1,6 +1,6 @@
 # Generative-AI-for-Demand-Forecasting-in-the-Door-Industry
 Designed a forecasting pipeline that helps optimize inventory planning in the door industry. 
-[trimelite workflow.jpeg]
+![Trimelite Workflow][[trimelite workflow.jpeg](https://github.com/priyankadeep/Generative-AI-for-Demand-Forecasting-in-the-Door-Industry/blob/main/trimelite%20workflow.jpeg)]
 Partnered with Trimlite LLC to build a Machine Learning driven forecasting pipeline designed to reduce inventory losses caused by manual forecasting.
 
 Using their historical weekly sales and inventory (structured and unstructured) data, I engineered temporal features (lags, rolling averages, week/month flags) to give models meaningful inputs.
