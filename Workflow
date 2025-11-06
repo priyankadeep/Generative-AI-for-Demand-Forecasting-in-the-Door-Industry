@@ -1,0 +1,59 @@
+1. Data Ingestion
+
+Data was sourced and aggregated from multiple enterprise systems and exports:
+
+ERP Exports: Sideline, Agility, and other internal databases
+
+CSV Files: Historical weekly sales and inventory records
+
+SQL Queries and Python Scripts: Used to automate extraction and validation steps
+
+2. Data Cleaning and Alignment
+
+Data was standardized and aligned to ensure quality and consistency:
+
+Timestamp Alignment: All records synchronized to weekly frequency
+
+Gap Imputation: Forward and backward filling to address missing weeks
+
+Outlier Detection: Identified and corrected anomalies using statistical thresholds
+
+SKU Classification: Grouped SKUs by product category and fire-rating codes (20m, 60m, 90m, etc.)
+
+3. Feature Engineering
+
+Time-based features were engineered to capture seasonality and trend behavior:
+
+Lag Features: t-1, t-2 lags to capture short-term memory
+
+Rolling Averages: Weekly and monthly smoothing to model gradual changes
+
+Flags: Week, month, and quarter flags for calendar-based seasonality
+
+4. Modeling
+
+Three model families were implemented and benchmarked:
+
+Model	Description	Purpose
+SARIMA	Grid-searched (p,d,q)(P,D,Q,s) parameters using statsmodels	Statistical baseline capturing seasonality and autocorrelation
+Prophet	Meta’s changepoint model with automatic trend and season detection	Handles missing data and quick iteration
+LSTM	Keras sequential neural network	Explores non-linear patterns in longer time sequences
+5. Backtesting and Evaluation
+
+Each model was validated on held-out windows with multiple metrics:
+
+MAE, MSE, RMSE, AIC, BIC
+
+Rolling backtests for robustness across SKUs
+
+Comparative visualizations to identify stability and overfitting
+
+6. Dashboard and Deployment
+
+Outputs were deployed to an interactive dashboard for business users:
+
+Built using JavaScript and Power BI
+
+Includes model selection, hyperparameter sliders, SKU filters, and CSV export
+
+Results and configuration files stored in GitHub for transparency and reproducibility
